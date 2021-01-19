@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "k8sproject-16bc"
+    labels:
+        app: "k8sproject-16bc"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: default-k8sproject-16bc.52d7232c4d9a456c83f4.francecentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "k8sproject-16bc"
+                servicePort: 8000
