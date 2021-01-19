@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8sproject-16bc"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8sproject-16bc"
+  template:
+    metadata:
+      labels:
+        app: "k8sproject-16bc"
+    spec:
+      containers:
+        - name: "k8sproject-16bc"
+          image: "k8sproject.azurecr.io/k8sproject"
+          ports:
+          - containerPort: 8000
