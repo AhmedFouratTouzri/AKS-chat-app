@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksdev-0a3f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksdev-0a3f"
+  template:
+    metadata:
+      labels:
+        app: "aksdev-0a3f"
+    spec:
+      containers:
+        - name: "aksdev-0a3f"
+          image: "paascrdev.azurecr.io/aksdev"
+          ports:
+          - containerPort: 8000
