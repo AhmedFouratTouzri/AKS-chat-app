@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "aksdev-0a3f"
+    labels:
+        app: "aksdev-0a3f"
+spec:
+    type: ClusterIP
+    ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+      name: http
+    selector:
+        app: "aksdev-0a3f"
